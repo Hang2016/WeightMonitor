@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { Camera, CameraOptions } from '../../../node_modules/@ionic-native/camera';
 import { File } from '@ionic-native/file';
-
+import { FilePath } from '@ionic-native/file-path';
 @Component({
   selector: 'page-photo',
   templateUrl: 'photo.html'
@@ -13,11 +13,19 @@ export class PhotoPage {
   constructor(public navCtrl: NavController,
     private imagePicker: ImagePicker,
     private camera: Camera,
-    private file: File) {
-    console.log('data == ' + this.file.documentsDirectory);
+    private file: File,
+    private filePath: FilePath) {
+    console.log('data == ' + this.file.applicationDirectory);
   }
   test() {
-    console.log('data == ' + this.file.documentsDirectory);
+    console.log('documentsDirectory == ' + this.file.documentsDirectory);
+    console.log('applicationDirectory == ' + this.file.applicationDirectory);
+    console.log('applicationStorageDirectory == ' + this.file.applicationStorageDirectory);
+    console.log('cacheDirectory == ' + this.file.cacheDirectory);
+    console.log('dataDirectory == ' + this.file.dataDirectory);
+    console.log('externalApplicationStorageDirectory == ' + this.file.externalApplicationStorageDirectory);
+    console.log('externalDataDirectory == ' + this.file.externalDataDirectory);
+    console.log('sharedDirectory == ' + this.file.sharedDirectory);
   }
   addPhotos() {
     const options: ImagePickerOptions = {

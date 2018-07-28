@@ -15,6 +15,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { SpinnerDialog } from '@ionic-native/spinner-dialog';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
+import { FilePath } from '@ionic-native/file-path';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { File } from '@ionic-native/file';
     SpinnerDialog,
     Camera,
     File,
+    FilePath,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
