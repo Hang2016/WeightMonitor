@@ -10,6 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PhotoPage } from '../pages/photo/photo';
 
+import { ImagePicker } from '@ionic-native/image-picker';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { SpinnerDialog } from '@ionic-native/spinner-dialog';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,6 +38,11 @@ import { PhotoPage } from '../pages/photo/photo';
   providers: [
     StatusBar,
     SplashScreen,
+    ImagePicker,
+    PhotoViewer,
+    SpinnerDialog,
+    Camera,
+    File,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
