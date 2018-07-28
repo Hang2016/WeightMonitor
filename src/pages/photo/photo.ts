@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { Camera, CameraOptions } from '../../../node_modules/@ionic-native/camera';
+import { File } from '@ionic-native/file';
 
 @Component({
   selector: 'page-photo',
@@ -11,8 +12,12 @@ export class PhotoPage {
 
   constructor(public navCtrl: NavController,
     private imagePicker: ImagePicker,
-    private camera: Camera) {
-
+    private camera: Camera,
+    private file: File) {
+    console.log('data == ' + this.file.documentsDirectory);
+  }
+  test() {
+    console.log('data == ' + this.file.documentsDirectory);
   }
   addPhotos() {
     const options: ImagePickerOptions = {
@@ -39,14 +44,13 @@ export class PhotoPage {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       sourceType: this.camera.PictureSourceType.CAMERA,
-      allowEdit: true,
       saveToPhotoAlbum: true,
       cameraDirection: this.camera.Direction.BACK
     }
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      // let base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
     });

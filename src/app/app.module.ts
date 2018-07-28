@@ -13,8 +13,8 @@ import { PhotoPage } from '../pages/photo/photo';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { SpinnerDialog } from '@ionic-native/spinner-dialog';
-import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
 
 
 @NgModule({
