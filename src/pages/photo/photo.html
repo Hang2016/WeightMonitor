@@ -9,5 +9,12 @@
 <ion-content padding>
   <button ion-button full (click)="takePhoto()">Take Photo</button>
   <button ion-button full (click)="addPhotos()">Add Photo</button>
-  <button ion-button full (click)="test()">Test</button>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let image of images">
+        <button ion-button outline small (click)="viewPhoto(image)"> {{image.name}} </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
